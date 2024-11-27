@@ -29,6 +29,7 @@ If the task involves reading file contents, you can use ThePipe.
 Return only the code within ```python blocks. Do not include any explanations, imports, or additional code unless necessary. Ensure the code is executable without modifications.
 """
 
+
 def USER_MESSAGE(goal, current_dir):
     return f"""
 (USER: {USERNAME})
@@ -36,8 +37,9 @@ def USER_MESSAGE(goal, current_dir):
 Write {OPERATING_SYSTEM} python {PYTHON_VERSION} code to solve the following problem: {goal}. The code should print the final result directly. Do not include any explanations or additional code. Use only standard Python syntax.
 """
 
+
 def DEBUG_MESSAGE(code, error):
     return f"""```python
 {code}
 ```
-The above code returns the error "{error}". Please briefly explain in plain English why the error is happening, then write the corrected code in a code box.""" # CoT prompting improves debugging
+The above code returns the error "{error}". Please briefly explain in plain English why the error is happening, then write the corrected code in a code box."""  # CoT prompting improves debugging
