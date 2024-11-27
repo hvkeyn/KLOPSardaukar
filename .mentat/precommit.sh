@@ -1,3 +1,3 @@
-ruff format .
-ruff check --fix .
-pytest
+.venv/bin/ruff format .
+.venv/bin/ruff check --fix .
+.venv/bin/pytest
