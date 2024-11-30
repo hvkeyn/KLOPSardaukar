@@ -21,7 +21,10 @@ KLOP Sardaukar is a personal logic operations calculator built to work with AI m
 ## Key Features:
 - **Smart Error Handling**: If there is an issue connecting to the AI model, the program will display an error message and return to the console, waiting for a new command. This avoids continuous retries and allows users to move forward quickly.
 - **Version Control**: The tool automatically increments and updates its version, with each part of the version being color-coded for better readability.
-- **Code Execution**: Once a command is issued, the program generates the corresponding code and runs it in the console. It can also automatically install missing packages if necessary.
+- **Dynamic Error Correction in Code Execution**:
+  - Automatically detects errors in generated code and sends it for correction to the local AI model.
+  - Installs missing dependencies as needed and retries code execution after applying fixes.
+  - Provides up to 3 attempts to correct and re-execute the code, ensuring stability and efficiency.
 - **AI Interaction**: KLOP interacts with local AI models via API calls, which allows it to generate code based on user inputs, such as performing logical operations or calculations.
 - **LM Studio Client Mode**: For those with LM Studio installed, the tool can connect to the local instance of LM Studio, allowing for even faster and more flexible AI processing, without relying on external API services.
 
@@ -37,24 +40,11 @@ KLOP Sardaukar is a personal logic operations calculator built to work with AI m
   - Request the AI to create a presentation about a scientific topic, such as the Eddington Luminosity.
   - Analyze financial data (e.g., $VIX and $SPY), merge them, and plot the results using libraries like Matplotlib.
 
-- **Safety Tests**:
-  - The program runs with built-in safety checks, ensuring that no harmful or undefined behavior occurs when executing arbitrary code. To ensure the integrity of your system, we recommend using a sandboxed environment when testing such scripts.
-  - Generate and view an HTML template for displaying content, or even display live camera feeds via an ngrok server.
-
 ### 🧠 **Code Overview**:
 The `KLOP Sardaukar` is designed to interact with a large language model (LLM) and perform various tasks based on user input. The main components of the system are:
 
 - **prompts.py**: Contains predefined prompts, calibration messages, and instructions for the LLM.
 - **sardaukar.py**: The main script that handles user input, interacts with the local AI model (either OpenAI, OpenRouter, or LM Studio), and executes the generated code.
-
-### **How It Works**:
-1. **User Input**: The system waits for the user to input a command.
-2. **Prompt Generation**: The input is converted into a structured prompt, which is sent to the AI model.
-3. **Code Execution**: The model generates the code based on the prompt, and the system attempts to execute it.
-4. **Error Handling**: If the code execution fails or dependencies are missing, the system automatically handles the error and installs missing packages.
-5. **Output**: The generated output is shown to the user, and the program continues to wait for the next command.
-
-The `KLOP Sardaukar` tool can handle multiple types of tasks, from simple logical operations to complex AI-powered code generation, offering a seamless interface for interacting with models.
 
 ---
 
@@ -63,4 +53,4 @@ The `KLOP Sardaukar` tool can handle multiple types of tasks, from simple logica
 - Each run automatically increments the version of the program, ensuring the latest improvements and features are in use.
 - **Security Warning**: Always use this tool in a controlled environment, as executing arbitrary code could potentially cause issues on your system.
 
-Enjoy the power of AI directly in your terminal with **KLOP Sardaukar** — now with **LM Studio Client Mode** for an even more powerful local experience!
+Enjoy the power of AI directly in your terminal with **KLOP Sardaukar** — now with advanced error handling and correction!
